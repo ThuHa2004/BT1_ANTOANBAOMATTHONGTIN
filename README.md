@@ -170,9 +170,39 @@ Do không gian khóa của thuật toán này rất nhỏ nên nó dễ bị t�
 - Mã hóa PlayFair Cipher: là phương pháp mã hóa theo cặp chữ  
 
 ### 5.2 Thuật toán mã hóa và giải mã 
-#### Thuật toán mã hóa: 
 - Tạo một ma trận 5x5 từ khóa: viết khóa (loại bỏ chữ trùng lặp) rồi điền các chữ cái còn lại theo thứ tự bảng chữ cái.
-- Quy ước phổ biến: gộp I và J thành một ô (thay J bằng I). (Có thể chọn gộp U/V tùy biến.)
+- Quy ước phổ biến: gộp I và J thành một ô (thay J bằng I).
+#### Thuật toán mã hóa: 
+- Với mỗi digraph(A, B):
+  - Nếu A và B nằm cùng hàng trong ma trận thì thay bằng chữ cái ở bên phải (dịch phải)
+  - Nếu A và B cùng cột thì thay bằng chữ cái ở bên dưới (dịch xuống)
+  - Nếu A và B tạo thành hai góc của một hình chữ nhật thì thay mỗi chữ bằng chữ cùng hàng nhưng cột tương ứng với cột của chữ kia.
+
+#### Thuật toán giải mã: 
+- Làm ngược lại với thuật toán mã hóa:
+  - Cùng hàng: thay bằng chữ ở trái
+  - Cùng cột: thay bằng chữ ở trên
+  - Hình chữ nhật: đổi cột tương tự quy tắc mã hóa nhưng làm ngược lại
+
+### 5.3 Không gian khóa 
+- Mã hóa PlayFair dùng 25 ô (ma trận 5x5) nên số cách sắp xếp là 25! ==> không gian khóa rất lớn
+
+### 5.4 Cách phá mã không cần khóa
+- ***Phân tích tần suất digraph***: thống kê tần suất các cặp chữ cái trong bản mã
+- ***Crib/Known-plaintext***: Nếu biết hoặc đoán một đoạn plaintext, dùng vị trí đó để kiểm tra cấu hình bảng khóa. 
+- ***Phân tích cấu trúc cặp***: dò các quy tắc hình chữ nhật, hàng, cột để rút ra các quan hệ giữa các ký tự đã mã hoá → suy ra vị trí bảng.
+
+### 5.5 Cài đặt thuật toán mã hóa và giải mã 
+#### Mã hóa bằng html+css+javascript:  
+<img width="988" height="894" alt="image" src="https://github.com/user-attachments/assets/0bfb1273-0a33-4b9d-8363-55a3b37bea31" />  
+
+#### Giải mã bằng html+css+javascript:  
+<img width="1290" height="871" alt="image" src="https://github.com/user-attachments/assets/1563fb27-1189-4c79-96e7-fb0d74e2932c" />  
+
+#### Mã hóa và giải mã bằng C++:  
+<img width="1113" height="719" alt="image" src="https://github.com/user-attachments/assets/cc65289a-097a-4a4e-8fa6-abcc1e970c9f" />  
+
+# <p aline = "giữa"> HẾT!</p>
 
 
 
