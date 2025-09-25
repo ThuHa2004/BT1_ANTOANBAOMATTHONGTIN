@@ -13,7 +13,7 @@
 2. Thuật toán mã hóa, thuật toán giải mã
 3. Không gian khóa
 4. Cách phá mã (mà không cần khóa)
-5. Cài đặt thuật toán mã hóa và giải mã bằng code C++ và băng html+css+javascript
+5. Cài đặt thuật toán mã hóa và giải mã bằng code C++ và bằng html+css+javascript
 
 # BÀI LÀM: 
 ## 1. Phương pháp mã hóa Caesar
@@ -167,6 +167,13 @@ Do không gian khóa của thuật toán này rất nhỏ nên nó dễ bị t�
  
 ## 5. Phương pháp mã hóa PlayFair
 ### 5.1 Tên gọi
+- Mã hóa PlayFair Cipher: là phương pháp mã hóa theo cặp chữ  
+
+### 5.2 Thuật toán mã hóa và giải mã 
+#### Thuật toán mã hóa: 
+- Tạo một ma trận 5x5 từ khóa: viết khóa (loại bỏ chữ trùng lặp) rồi điền các chữ cái còn lại theo thứ tự bảng chữ cái.
+- Quy ước phổ biến: gộp I và J thành một ô (thay J bằng I). (Có thể chọn gộp U/V tùy biến.)
+
 
 
 
