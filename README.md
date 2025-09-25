@@ -163,8 +163,8 @@ Do không gian khóa của thuật toán này rất nhỏ nên nó dễ bị t�
 <img width="1246" height="762" alt="image" src="https://github.com/user-attachments/assets/a12c0889-1343-40c7-89d8-d0d544b7051c" />
  
 #### Mã hóa và giải mã bằng C++:    
-<img width="979" height="744" alt="image" src="https://github.com/user-attachments/assets/9627815d-8394-420e-b5d1-73fe2aceb39c" />  
-
+<img width="1157" height="738" alt="image" src="https://github.com/user-attachments/assets/6116bec4-7121-4f27-ac80-ec8b420a46a8" />
+ 
 ## 5. Phương pháp mã hóa PlayFair
 ### 5.1 Tên gọi
 
