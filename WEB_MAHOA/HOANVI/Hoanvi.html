@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mã hóa hoán vị - Permutation Cipher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Mã hóa hoán vị - Permutation Cipher</h1>
+
+    <label>Văn bản (Nhập bản rõ để mã hóa hoặc nhập cipher để giải mã)</label>
+    <textarea id="inputText" rows="4" placeholder="Nhập bản rõ hoặc bản mã để giải mã hoặc mã hóa"></textarea>
+    <div class="note">Bước 1: Nhập văn bản. Bước 2: Nhập khóa (ví dụ: 3 1 4 2). Bước 3: Bấm giải mã hoặc mã hóa.</div>
+
+    <label>Nhập khóa. Ví dụ: 3 1 4 2</label>
+    <input id="permInput" type="text" placeholder="Vi du: 3 1 4 2" />
+
+    <div class="row">
+      <div class="col">
+        <button id="encBtn">Mã hóa</button>
+        <button id="decBtn" class="secondary">Giải mã</button>
+      </div>
+      <div class="col">
+        <label>Pad: (auto 'X' applied to last block)</label>
+        <div class="note">Block cuối sẽ tự động được thêm 'X' nếu không đủ độ dài.</div>
+      </div>
+    </div>
+
+    <div id="msg" class="error" aria-live="polite" style="display:none;"></div>
+
+    <label>Output</label>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

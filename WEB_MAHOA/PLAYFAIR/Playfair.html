@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mã hóa Playfair Cipher</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="card">
+            <h1>Thuật toán Playfair Cipher</h1>
+
+            <label for="plaintext">Văn bản:</label>
+            <textarea id="plaintext" rows="3" placeholder="Nhập văn bản cần mã hóa/giải mã"></textarea>
+
+            <label for="key">Khóa (chữ cái):</label>
+            <input type="text" id="key" placeholder="Nhập khóa, ví dụ: thuha">
+
+            <div id="matrixContainer"></div>
+
+            <button onclick="maHoa()">Mã hóa</button>
+            <button onclick="giaiMa()">Giải mã</button>
+
+            <h3>Kết quả:</h3>
+            <div class="output" id="output"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

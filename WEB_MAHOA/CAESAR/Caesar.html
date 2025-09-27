@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Caesar Cipher</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+   
+    <body>
+        <h1> Phương pháp mã hóa Caesar Cipher</h1>
+        <form id="cipherForm">
+            <label for="inputText">Nhập văn bản:</label>
+            <textarea id="inputText" style="width: 50%; height: auto;"></textarea><br>
+
+            <label for="Khoa">Khóa: </label>
+            <input type="number" id="Khoa" style="width: 50px;"><br>
+            <h2>Button mã hóa và giải mã: </h2>
+            <button type="button" onclick="encrypt()">Mã hóa</button>
+            <button type="button" onclick="decrypt()">Giải mã</button>
+        </form>
+
+        <h2>Kết quả đầu ra:</h2>
+        <pre id="outputText"></pre>
+
+        <script>
+            function encrypt() {
+                const inputText = document.getElementById("inputText").value;
+                const Khoa = parseInt(document.getElementById("Khoa").value);
+                const output = caesarCipher(inputText, Khoa);
+                document.getElementById("outputText").textContent = output;
+            }
+
+            function decrypt() {
+                const inputText = document.getElementById("inputText").value;
+                const Khoa = parseInt(document.getElementById("Khoa").value);
+                const output = caesarCipher(inputText, -Khoa);
+                document.getElementById("outputText").textContent = output;
+            }
+
+            function caesarCipher(str, Khoa) {
+                const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                const input = str.toUpperCase();
+                let result = "";
+
+                for (let i = 0; i < input.length; i++) {
+                    const char = input[i];
+                    const index = alphabet.indexOf(char);
+
+                    if (index !== -1) {
+                        const newIndex = (index + Khoa + 26) % 26;
+                        result += alphabet[newIndex];
+                    } else {
+                        result += char;
+                    }
+                }
+
+                return result;
+            }
+        </script>
+    </body>
+</html>

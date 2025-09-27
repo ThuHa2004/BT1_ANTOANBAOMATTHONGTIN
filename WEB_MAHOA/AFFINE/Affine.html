@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Affine Cipher</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1> Mã hóa Affine Cipher</h1>
+        <label>Nhập văn bản:</label><br>
+        <textarea id="plaintext"; style="width: 50%;"></textarea>
+        <h3>Nhập khóa a, b:</h3>
+        <p>(a phải là nguyên tố cùng nhau với 26, nếu không thì kết quả mã hóa sẽ bị sai)</p>
+        <label>Khóa a:</label><br>
+        <input type="number" id="a" style="width: 100px;"><br>
+        <label>Khóa b:</label><br>
+        <input type="number" id="b" style="width: 100px;"><br>
+        <button onclick="encrypt()">Mã hóa</button>
+        <button onclick="decrypt()">Giải mã</button>
+        <h3>Kết quả:</h3>
+        <div id="result"></div>
+
+        <script>
+            function modInverse(a, m) {
+            for (let x = 1; x < m; x++)
+                if ((a * x) % m === 1) return x;
+            return -1;
+            }
+
+            function encrypt() {
+            let text = document.getElementById("plaintext").value.toUpperCase();
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let result = "";
+
+            for (let i = 0; i < text.length; i++) {
+                let c = text.charCodeAt(i);
+                if (c >= 65 && c <= 90) {
+                let x = c - 65;
+                let y = (a * x + b) % 26;
+                result += String.fromCharCode(y + 65);
+                } else {
+                result += text[i];
+                }
+            }
+            document.getElementById("result").innerText = result;
+            }
+
+            function decrypt() {
+            let text = document.getElementById("plaintext").value.toUpperCase();
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let a_inv = modInverse(a, 26);
+            let result = "";
+
+            for (let i = 0; i < text.length; i++) {
+                let c = text.charCodeAt(i);
+                if (c >= 65 && c <= 90) {
+                let y = c - 65;
+                let x = (a_inv * (y - b + 26)) % 26;
+                result += String.fromCharCode(x + 65);
+                } else {
+                result += text[i];
+                }
+            }
+            document.getElementById("result").innerText = result;
+            }
+        </script>
+    </body>
+</html>
